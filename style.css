@@ -518,6 +518,20 @@ body {
   text-shadow: 0 0 12px #00C6FF;
 }
 
+
+.contact-social .social-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Mobile: 2 cards per row */
+@media (max-width: 768px) {
+  .contact-social .social-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
 /* Responsive */
 @media(max-width:768px){
   .social-card {
