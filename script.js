@@ -1,11 +1,19 @@
-// ================= NAVBAR TOGGLE =================
-const toggle = document.getElementById("menuToggle");
-const nav = document.getElementById("navLinks");
+const navLinks = document.getElementById("navLinks");
+const menuToggle = document.getElementById("menuToggle");
 
-toggle.onclick = () => {
-  nav.classList.toggle("active");
+/* فتح / قفل المينيو */
+menuToggle.onclick = () => {
+  navLinks.classList.toggle("active");
 };
 
+/* قفل المينيو عند الضغط على أي لينك */
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
 // ================= TYPING EFFECT =================
 const typingTexts = ["With Buildify Me", "With Stunning Design", "With Modern Tech"];
 let typingIndex = 0;
@@ -72,7 +80,7 @@ whatsappForm.addEventListener('submit', function(e) {
   const phone = this.phone.value.trim();
   const message = this.message.value.trim();
 
-  const whatsappNumber = "201234567890"; // رقم واتساب الشركة
+  const whatsappNumber = "201145320595"; // رقم واتساب الشركة
   const text = `Hello! My name is ${name}. Phone: ${phone}. Message: ${message}`;
   const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
